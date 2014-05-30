@@ -59,9 +59,10 @@ def unjumble(jumbled, dict):
   if len(jumbled) < 2:
     return words
 
-  # Permute the letter using boothroyd's algo. Run the same permutations
-  # on an ascending sequence of numbers 'ref' so that we can check unique
+  # Permute the letter using Boothroyd's algo. Run the same permutations
+  # on an ascending sequence of numbers 'ref' so that we can extract unique
   # sub-permutations on the prefices (see below).
+
   s = list(jumbled)
   c = [0] * len(s)
   ref = range(len(s))
