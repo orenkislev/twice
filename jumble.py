@@ -59,9 +59,13 @@ def unjumble(jumbled, dict):
   if len(jumbled) < 2:
     return words
 
-  # Permute the letter using Boothroyd's algo. Run the same permutations
-  # on an ascending sequence of numbers 'ref' so that we can extract unique
-  # sub-permutations on the prefices (see below).
+  # Permute the letters using Boothroyd's algo. The method is efficient but
+  # not trivial to read, since it was derived from a recursive version. A simpler
+  # version of the function is available here:
+  # http://rosettacode.org/wiki/Permutations#C
+  #
+  # We also run the same permutation on an ascending sequence of numbers 'ref' so 
+  # that we can identify unique sub-permutations on the prefices (see below).
 
   s = list(jumbled)
   c = [0] * len(s)
