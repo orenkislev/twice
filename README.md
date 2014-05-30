@@ -3,3 +3,5 @@ Outputs all the valid words that can be constructed from any subset of the input
 
 Usage:
 jumble.py [--dict=dictionary_file] <jumbled_word>
+
+Note that the implementation ignores single-letter words.

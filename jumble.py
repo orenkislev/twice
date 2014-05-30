@@ -1,5 +1,6 @@
 import sys
 import getopt
+import re
 
 # File containing a list of valid words
 # Configured with the flag --dict
@@ -39,7 +40,7 @@ def read_dictionary():
 
     # Ignore one-letter words.
     if len(word) > 1:
-      dict.add(word)
+      dict.add(word.lower())
   return dict
 
 
@@ -53,6 +54,9 @@ def non_ascending_prefix(seq):
 def unjumble(jumbled, dict):
   """Returns a set of words from dict that can be composed from letters in jumbled."""
   words = set()
+
+  # Remove non-letter characters and convert to lowercase.
+  jumbled = re.sub(r'[^a-z]', '', jumbled.lower())
   if jumbled in dict:
     words.add(jumbled)
 
